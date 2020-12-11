@@ -44,7 +44,7 @@ export default class App extends Component {
         <Ingredients ingredients={this.state.ingredients} addToBurger={this.addToBurger}/>
       </div>
       <div className="column">
-        <BurgerStack burgerItem={this.state.burgerStack} removeFromBurger={this.removeFromBurger}/>
+        <BurgerStack burger={this.state.burgerStack} removeFromBurger={this.removeFromBurger}/>
       </div>
     </div>
   );

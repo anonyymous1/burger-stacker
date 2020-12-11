@@ -1,7 +1,7 @@
 import React, {Component} from 'react'
 export default class BurgerStack extends Component{
     render() {
-        const burgerChoice = this.props.burgerItem.map((eachItem, ind) => {
+        const burgerChoice = this.props.burger.map((eachItem, ind) => {
             return <div>
                     <li style={{ backgroundColor: eachItem.color }} key={ind}>{eachItem.name}</li>
                     </div>

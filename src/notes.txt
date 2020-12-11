@@ -18,36 +18,60 @@ export default class App extends Component {
         {name: 'Lettuce', color: 'lawngreen'},
         {name: 'Tomato', color: 'tomato'},
         {name: 'Bacon', color: 'maroon'},
-        {name: 'Pickle', color: 'darkgreen'},
         {name: 'Onion', color: 'lightyellow'}
       ],
       burgerStack: []
     }
   }
+  
+  addToBurger = (ingredient) => {
 
-  addToBurger = (eachIngredient) => {
-    let burgerArray = this.state.burgerStack
-    this.state.burgerStack.push(eachIngredient)
-    this.setState({burgerStack: burgerArray})
-  }
-
-  removeFromBurger = (e) => {
-    this.setState({
-      burgerStack:[]
-    })
   }
 
   render(){
      return (
     <div className="row">
       <div className="column">
-        <Ingredients ingredients={this.state.ingredients} addToBurger={this.addToBurger}/>
+        <Ingredients ingredients={this.state.ingredients} addToBurger={this.moveToBurger}/>
       </div>
       <div className="column">
-        <BurgerStack burgerItem={this.state.burgerStack} removeFromBurger={this.removeFromBurger}/>
+        <BurgerStack />
       </div>
     </div>
   );
 }
   }
  
+
+
+
+
+
+ import React, {Component} from 'react';
+export default class Ingredient extends Component {
+    render() {
+        const ingredientItem = this.props.ingredients.map((eachItem, ind) => {
+            return <div>
+                    <li key={ind}>
+                    {eachItem.name}
+                    <button>Add to Burger</button>
+                    </li>
+                    </div>
+        })
+        return(
+        <div>
+            <h1>Ingredients</h1>
+            {ingredientItem}
+        </div>
+    )
+    }
+}
+
+<button onClick={(e) => this.addToBurger(eachIngredient, index)}>Add to Burger</button>
+
+
+addToBurger = (eachIngredient) => {
+    let burgerArray = this.state.burgerStack
+    this.state.burgerStack.push(eachIngredient)
+    this.setState({burgerStack: burgerArray})
+}

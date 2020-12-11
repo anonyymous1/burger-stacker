@@ -36,3 +36,29 @@
     transform: rotate(360deg);
   }
 }
+
+.row {
+  margin-top: 100px;
+  display: flex;
+}
+
+.column {
+  margin-right: 20px;
+  margin-left: 20px;
+  height: 475px;
+  border: black 1px solid;
+  border-radius: 20px;
+  flex: 50%;
+  text-align: center;
+  overflow: hidden;
+}
+
+li {
+  
+  list-style-type: none;
+  margin-bottom: 10px;
+}
+
+button {
+  margin-left: 20px;
+}
